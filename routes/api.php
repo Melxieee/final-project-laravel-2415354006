@@ -2,15 +2,27 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Api\CustomerController;
 use App\Http\Controllers\Api\ServiceController;
+
 Route::apiResource("services", ServiceController::class);
 Route::patch("services/{service}/activate", [
- ServiceController::class,
- "activate",
+    ServiceController::class,
+    "activate",
 ]);
 Route::patch("services/{service}/deactivate", [
- ServiceController::class,
- "deactivate",
+    ServiceController::class,
+    "deactivate",
 ]);
 
+Route::apiResource('customers', CustomerController::class);
+
+Route::patch('customers/{customer}/activate', [
+    CustomerController::class,
+    'activate',
+]);
+
+Route::patch('customers/{customer}/deactivate', [
+    CustomerController::class,
+    'deactivate',
+]);
