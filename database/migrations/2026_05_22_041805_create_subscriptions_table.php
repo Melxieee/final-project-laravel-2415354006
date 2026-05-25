@@ -9,18 +9,18 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-   public function up(): void
-{
-    Schema::create('subscriptions', function (Blueprint $table) {
-        $table->id();
-        $table->foreignId('customer_id')->constrained('customers')->cascadeOnDelete();
-        $table->foreignId('service_id')->constrained('services')->cascadeOnDelete();
-        $table->date('start_date')->nullable();
-        $table->date('end_date')->nullable();
-        $table->string('status');
-        $table->timestamps();
-    });
-}
+    public function up(): void
+    {
+        Schema::create('subscriptions', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('customer_id')->constrained('customers')->cascadeOnDelete();
+            $table->foreignId('service_id')->constrained('services')->cascadeOnDelete();
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
+            $table->string('status');
+            $table->timestamps();
+        });
+    }
     /**
      * Reverse the migrations.
      */
