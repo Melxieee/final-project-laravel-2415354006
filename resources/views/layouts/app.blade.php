@@ -54,13 +54,12 @@
             transition: all 0.15s ease-in-out;
         }
         .main-sidebar .nav-link.active {
-            /* background-color: #007bff;
-            color: #fff; */
-            color: #007bff;
-        }
-        .main-sidebar .nav-link:hover {
             background-color: #007bff;
             color: #fff;
+        }
+        .main-sidebar .nav-link:hover {
+            background-color: oklch(93.2% 0.032 255.585);
+            color: #007bff;
         }
         .main-sidebar .nav-link i {
             font-size: 1.1rem;
@@ -174,11 +173,11 @@
                 </button>
                 <h5 class="m-0 font-weight-semibold">@yield('page_title', 'Dashboard')</h5>
             </div>
-            <div class="d-flex align-items-center gap-3">
+            <!-- <div class="d-flex align-items-center gap-3">
                 <span class="text-muted text-sm d-none d-sm-inline">Logged in as: <strong>2415354006</strong></span>
                 <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; font-weight: bold;">
                     A
-                </div>
+                </div> -->
             </div>
         </header>
 
