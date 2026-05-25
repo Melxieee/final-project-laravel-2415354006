@@ -41,14 +41,14 @@ $statusMap = [
         <div class="card-body p-0">
             <div class="table-responsive">
                 <table class="table table-hover align-middle mb-0">
-                    <thead class="table-light">
+                    <thead class="table-white">
                         <tr>
-                            <th class="px-4 py-3 text-muted text-sm" style="font-weight: 600;">Customer Name</th>
-                            <th class="px-4 py-3 text-muted text-sm" style="font-weight: 600;">Service Name</th>
-                            <th class="px-4 py-3 text-muted text-sm" style="font-weight: 600;">Start Date</th>
-                            <th class="px-4 py-3 text-muted text-sm" style="font-weight: 600;">End Date</th>
-                            <th class="px-4 py-3 text-muted text-sm" style="font-weight: 600;">Status</th>
-                            <th class="px-4 py-3 text-muted text-sm text-end" style="font-weight: 600;">Action</th>
+                            <th class="px-4 py-3 text-black text-sm" style="font-weight: 600;">Customer Name</th>
+                            <th class="px-4 py-3 text-black text-sm" style="font-weight: 600;">Service Name</th>
+                            <th class="px-4 py-3 text-black text-sm" style="font-weight: 600;">Start Date</th>
+                            <th class="px-4 py-3 text-black text-sm" style="font-weight: 600;">End Date</th>
+                            <th class="px-4 py-3 text-black text-sm" style="font-weight: 600;">Status</th>
+                            <th class="px-4 py-3 text-black text-sm text-end" style="font-weight: 600;">Action</th>
                         </tr>
                     </thead>
                     <tbody id="subscriptions-table-body">
@@ -101,27 +101,41 @@ $statusMap = [
 
             document.getElementById('edit_start_date').value = cleanDate(startDate);
             document.getElementById('edit_end_date').value = cleanDate(endDate);
-           const statusOptions = [
-    { value: 'active', label: 'Active' },
-    { value: 'inactive', label: 'Deactivate' },
-    { value: 'trial', label: 'Trial' },
-    { value: 'isolir', label: 'Isolir' },
-    { value: 'dismantle', label: 'Dismantle' }
-];
+            const statusOptions = [{
+                    value: 'active',
+                    label: 'Active'
+                },
+                {
+                    value: 'inactive',
+                    label: 'Deactivate'
+                },
+                {
+                    value: 'trial',
+                    label: 'Trial'
+                },
+                {
+                    value: 'isolir',
+                    label: 'Isolir'
+                },
+                {
+                    value: 'dismantle',
+                    label: 'Dismantle'
+                }
+            ];
 
-const statusSelect = document.getElementById('edit_status');
+            const statusSelect = document.getElementById('edit_status');
 
-statusSelect.innerHTML = '';
+            statusSelect.innerHTML = '';
 
-statusOptions.forEach(item => {
-    if (item.value !== status) {
-        statusSelect.innerHTML += `
+            statusOptions.forEach(item => {
+                if (item.value !== status) {
+                    statusSelect.innerHTML += `
             <option value="${item.value}">
                 ${item.label}
             </option>
         `;
-    }
-});
+                }
+            });
         });
     }
 

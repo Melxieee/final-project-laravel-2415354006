@@ -73,6 +73,7 @@
             transition: all 0.3s;
             display: flex;
             flex-direction: column;
+            font-size: 15px;
         }
         /* Navbar */
         .main-header {

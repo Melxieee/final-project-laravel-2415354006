@@ -44,15 +44,15 @@
         <div class="card-body p-0">
             <div class="table-responsive">
                 <table class="table table-hover align-middle mb-0">
-                    <thead class="table-light">
+                    <thead class="table-white">
                         <tr>
-                            <th class="px-4 py-3 text-muted text-sm" style="font-weight: 600;">Customer ID</th>
-                            <th class="px-4 py-3 text-muted text-sm" style="font-weight: 600;">Customer Name</th>
-                            <th class="px-4 py-3 text-muted text-sm" style="font-weight: 600;">Email</th>
-                            <!-- <th class="px-4 py-3 text-muted text-sm" style="font-weight: 600;">Phone</th> -->
-                            <th class="px-4 py-3 text-muted text-sm" style="font-weight: 600;">Address</th>
-                            <th class="px-4 py-3 text-muted text-sm" style="font-weight: 600;">Status</th>
-                            <th class="px-4 py-3 text-muted text-sm text-end" style="font-weight: 600;">Action</th>
+                            <th class="px-4 py-3 text-black text-sm" style="font-weight: 600;">Customer ID</th>
+                            <th class="px-4 py-3 text-black text-sm" style="font-weight: 600;">Customer Name</th>
+                            <th class="px-4 py-3 text-black text-sm" style="font-weight: 600;">Email</th>
+                            <!-- <th class="px-4 py-3 text-black text-sm" style="font-weight: 600;">Phone</th> -->
+                            <th class="px-4 py-3 text-black text-sm" style="font-weight: 600;">Address</th>
+                            <th class="px-4 py-3 text-black text-sm" style="font-weight: 600;">Status</th>
+                            <th class="px-4 py-3 text-black text-sm text-end" style="font-weight: 600;">Action</th>
                         </tr>
                     </thead>
                     <tbody id="customers-table-body">
