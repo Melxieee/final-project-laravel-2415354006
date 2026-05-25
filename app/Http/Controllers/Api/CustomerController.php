@@ -29,7 +29,11 @@ class CustomerController extends Controller
             $query->where('status', $status === 'active');
         }
 
-        $customers = $query->latest()->get();
+        if ($request->query('all') === '1' || $request->query('all') === 'true') {
+            $customers = $query->latest()->get();
+        } else {
+            $customers = $query->latest()->paginate(10)->withQueryString();
+        }
 
         return response()->json([
             'success' => true,

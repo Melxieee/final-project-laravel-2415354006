@@ -27,7 +27,11 @@ class ServiceController extends Controller
             }
             $query->where("status", $status === "active");
         }
-        $services = $query->latest()->get();
+        if ($request->query('all') === '1' || $request->query('all') === 'true') {
+            $services = $query->latest()->get();
+        } else {
+            $services = $query->latest()->paginate(10)->withQueryString();
+        }
         return response()->json([
             "success" => true,
             "message" => "Services retrieved successfully",

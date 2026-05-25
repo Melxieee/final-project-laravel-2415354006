@@ -10,11 +10,16 @@ use Illuminate\Validation\Rule;
 
 class SubscriptionController extends Controller
 {
-    public function index(): JsonResponse
+    public function index(Request $request): JsonResponse
     {
-        $subscriptions = Subscription::with(['customer', 'service'])
-            ->latest()
-            ->get();
+        $query = Subscription::with(['customer', 'service'])
+            ->latest();
+
+        if ($request->query('all') === '1' || $request->query('all') === 'true') {
+            $subscriptions = $query->get();
+        } else {
+            $subscriptions = $query->paginate(10)->withQueryString();
+        }
 
         return response()->json([
             'success' => true,
